@@ -1,0 +1,87 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    line-height: 24px;
+    background-color: mintcream;
+    color: dimgray;
+    word-break: keep-all;
+}
+
+.question {
+    position: absolute;
+    height: 100%;
+    width: 240px;
+    border-right: 1px solid gainsboro;
+}
+
+ol {
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.answer {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 240px);
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.content {
+    display: none;
+    height: 100%;
+  /*  overflow-y:auto;*/
+}
+
+.content:target {
+    display: block;
+}
+
+@media screen and (max-width: 704px) {
+
+}
+
+
+a {color: plum;}
+
+.indent {
+    margin-left: 30px;
+}
+
+li::marker {
+    color: plum;
+}
+
+.pdf-wrap embed,
+.pdf-wrap object {
+  width: 80%;
+  height: 600px; /* 필요 길이로 조절 */
+  display: block;
+}
+
+
+img {
+    height: 300px;
+    text-align: center;
+}
+
+.question {
+  position: absolute;
+  height: 100%;
+  width: 240px;
+  border-right: 1px solid gainsboro;
+        /* 기본 배경색 */
+  transition: background-color 0.3s ease;
+  line-height: 24px;
+}
+
+.question:hover {
+  background-color: honeydew;
+  color: orchid;    /* 호버 시 색상 */
+}
+
