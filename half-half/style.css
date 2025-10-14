@@ -1,0 +1,106 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            overflow: hidden;
+        }
+
+        .half {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .left {
+            background-color: honeydew;
+        }
+
+        .right {
+            background-color: lemonchiffon;
+            left: 50%;
+        }
+
+        .content {
+            height: 200%;
+        }
+
+        h2 {
+            position: fixed;
+        }
+
+        p {
+            padding-top: 50px;
+        }
+
+        img {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .img-container {
+            display: flex; /* */
+            justify-content: center;
+        }
+
+        .mesh {
+            width: 20%;
+            vertical-align: top;
+            margin: 5px;
+        }
+
+        @media screen and (max-width: 704px) {
+        }
+
+        .entsinnen {
+            width: 30%;
+            vertical-align: top;
+            margin: 5px;
+        }
+
+        .center {
+            width:30%;
+            vertical-align: bottom;
+            margin: 3px;
+        }
+
+        .second {
+            width: 30%;
+            vertical-align:top;
+            margin: 5px;
+        }
+
+        .first {
+            width: 62%;
+            vertical-align:top;
+            margin: 5px;
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        figcaption {
+            background-color: lemonchiffon;
+            padding: 8px;
+            color: #6F4E37;
+        }
+
+        figcaption.my {
+            background-color: honeydew;
+            padding: 8px;
+            color: #6F4E37;
+        }
+
+        h2 {
+            margin-toptop: 0;
+            background-color: inherit; /* 스크롤 시 배경 가림 방지 */
+            padding: 4px 0;
+        }
+
+
