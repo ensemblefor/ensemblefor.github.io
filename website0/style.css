@@ -1,0 +1,48 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    line-height: 40px;
+    font-family: sans-serif;
+    background-color: lavenderblush;
+    color: dimgray;
+}
+
+.h1{
+	color: gray;
+}
+
+.bio1{
+	color: slategray;
+}
+
+.bio2{
+	color:dimgray;
+}
+
+a {
+	color: slategray;
+}
+
+
+.music{
+	color: darkslateblue;
+}
+
+h3{
+	color:darkkhaki;
+}
+
+
+iframe{
+	margin-left: 1000px
+	
+}
+
+@media screen and (max-width: 704px) {
+
+}
