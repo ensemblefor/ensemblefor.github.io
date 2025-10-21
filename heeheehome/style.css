@@ -1,0 +1,93 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    background-color: cornsilk;
+    font-family: sans-serif;
+    line-height: 34px;
+    color: dimgray;
+
+}
+
+details {
+    cursor: pointer;
+}
+
+.sub {
+    margin-left: 20px;
+}
+
+.subsub {
+    margin-left: 40px;
+}
+
+summary.main::marker {
+  color: lightsteelblue;
+  content: "✿ ";
+}
+
+summary.sub::marker {
+    color: lightsteelblue;
+    content: "• ";
+}
+
+li::marker {
+    color: ; 
+    font-size: ; 
+    content: ""; 
+}
+
+img {
+    width: 500px;
+}
+
+h1 {color: lightsteelblue;
+    display: inline-block;}
+
+h1:hover {
+    background-color: mistyrose;
+}   
+
+
+figcaption {
+    text-align: center;
+    background-color: mistyrose;
+    width: 500px;
+    margin-left: 40px;
+}
+
+
+a.link{color: sandybrown;}
+
+.plant {
+    margin-left: 40px;
+}
+
+img.plant {
+    border-radius:50%;
+    width:200px;
+}
+
+figcaption.plant{
+    width: 200px;
+}
+
+
+figure {
+    display: inline-block;
+  text-align: center;
+}
+
+p.caution {
+    color: plum;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }

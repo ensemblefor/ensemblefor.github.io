@@ -1,0 +1,63 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    line-height: 30px;
+}
+
+h1 {color: plum;
+display: inline-block;}
+
+details {
+    cursor: pointer;
+}
+
+.indent {
+    margin-left: 20px;
+}
+
+summary::marker {
+  color: violet;
+  content: "* ";
+}
+
+li::marker {
+    color: ; 
+    font-size: ; 
+}
+
+img {
+    width: 150px;
+}
+
+.easy {color: plum;}
+
+h1:hover {
+    background-color: lemonchiffon;
+}
+
+img:hover {
+    filter: grayscale(0%);
+    opacity: 50%;
+}
+
+figure {
+    width: 150px;
+    display: inline-block;
+
+}
+
+figcaption {
+    text-align: center;
+    background-color: palegreen;
+
+}
+
+
+.left:hover {
+    filter: grayscale(100%);
+}
