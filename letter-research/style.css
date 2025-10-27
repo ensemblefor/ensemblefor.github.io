@@ -1,0 +1,80 @@
+        *{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    line-height: 30px;
+    background-color: lavenderblush;
+    color: dimgray;
+    display: flex;
+    flex-flow: column nowrap;
+    /*justify-content: center;
+    align-items: center;*/
+    margin: 0;
+    padding: 20px 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    font-size: 11pt;
+}
+
+h1 {color: plum;
+display: inline-block;}
+
+details {
+    cursor: pointer;
+}
+
+.indent {
+    margin-left: 20px;
+}
+
+summary::marker {
+  color: violet;
+  content: "* ";
+}
+
+li::marker {
+    color: ; 
+    font-size: ; 
+}
+
+img {
+    width: 150px;
+}
+
+.easy {color: plum;}
+
+
+img:hover {
+    filter: grayscale(0%);
+    opacity: 50%;
+}
+
+figure {
+    width: 150px;
+    display: inline-block;
+
+}
+
+figcaption {
+    text-align: center;
+    background-color: palegreen;
+
+}
+
+
+.left:hover {
+    filter: grayscale(100%);
+}
+
+a:link { color: rosybrown; } 
+a:visited { color: darkgrey; }
+
+load-more {
+    margin: 100px 0;
+}
