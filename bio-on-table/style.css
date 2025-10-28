@@ -1,42 +1,62 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root{
+  --ink: #242424;      
+  --bg: mintcream;    
+  --h1-hover: #8EE5D1;
+  --link: rosybrown;  
+  --visited: #8C8C8C;  
+}
+
+/* =========================
+   Typography & Body
+========================= */
 body {
   font-family: sans-serif;
   font-size: 11pt;
   line-height: 20pt;
-  background-color: mintcream;
+  background-color: var(--bg);
+  color: var(--ink);
 }
 
+/* 제목 */
 h1 {
   text-align: center;
-  font-size: 80pt;
+  font-size: 80pt; /* 데스크탑 유지 */
 }
 
-table {
-  width: 1200px;
-  margin: auto;
-  margin-top: 30px;
-  text-align: left;
+/* 히어로 영역 (원래 로직 유지) */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 40px;  /* 하단 여백 */
+}
+.hero .highlight {
+  transition: color 0.2s ease;
+}
+.hero .highlight:hover {
+  color: var(--h1-hover);
+  cursor: pointer;
 }
 
-table, tr, td, th {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 10px;
-}
+/* 링크 */
+a:link    { color: var(--link); }
+a:visited { color: var(--visited); }
 
-th {
-  font-weight: bold;
-}
+/* 리스트 */
+li { margin-left: 20px; }
 
-li {
-  margin-left: 20px;
-}
+/* 이미지 (안전) */
+img { max-width: 100%; height: auto; }
 
+/* 푸터 */
 footer {
   font-size: 9pt;
   margin: 10px;
@@ -44,42 +64,99 @@ footer {
   background-color: honeydew;
 }
 
+/* =========================
+   Tables (Desktop)
+========================= */
+table {
+  width: 1200px;
+  margin: 30px auto 0;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+table { border-collapse: collapse; }
+tr, td, th { border: 0.5px solid var(--ink); }
+
+th { font-weight: bold; }
+
+table th, table td { padding: 10px; }
+
+tbody td, tbody th { transition: background-color .15s ease-in-out; }
+tbody tr:hover > * { background-color: honeydew; }
+
+button {
+  /*position: fixed;*/
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid #242424;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+
+
+/* =========================
+   Mobile (<= 704px)
+   - h1 반응형
+   - 표: 왼쪽 첫 열만 보이기
+========================= */
 @media screen and (max-width: 704px) {
 
-}
+/* h1 줄 겹침 방지 & 크기/행간 정리 */
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;  /* 화면 아래 정렬 */
+    height: 100vh;          /* 한 화면 꽉 채우기 */
+    padding-bottom: 40px;   /* 아래 여백 */
+  }
 
-img {
-  width: 300px;
+  /* h1 폰트 사이즈와 줄 간격 안정화 */
+  .hero h1 {
+    font-size: clamp(28px, 9vw, 48px);
+    line-height: 1.15;        /* 글자 겹침 방지 */
+    text-align: center;
+    white-space: normal;      /* 강제 한 줄 금지 */
+    word-break: keep-all;     /* 자연 줄바꿈 */
+    letter-spacing: 0;
+    margin: 0;
+  }
 
 
-}
+  /* 테이블 기본 */
+  table {
+    width: 100%;
+    margin: 16px auto;
+    border-collapse: collapse;
+  }
 
-table {
-  border-collapse: collapse;
-  border-left: 0;
-  border-right: 0;
-}
+  /* 먼저 모든 보더 제거하고 */
+  tr, td, th { border: none; }
 
+  /* 2열부터 칸 자체 제거 */
+  table td:nth-child(n+2),
+  table th:nth-child(n+2) {
+    display: none;
+  }
 
-table th, table td {
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-bottom: 0;
-  padding: 10px;
-}
+  /* 첫 칸이 비어 있는 행(=rowspan 아래로 이어지는 빈 줄) 통째로 제거 */
+  tbody tr:has(> td:first-child:empty) {
+    display: none;
+  }
 
-tbody td, tbody th {
-  transition: background-color .15s ease-in-out;
-}
-tbody tr:hover > * {
-  background-color: lavenderblush;}
+  /* 남는 첫 칸만 표처럼 보이게 보더/패딩 적용 */
+  thead th:first-child,
+  tbody td:first-child {
+    display: table-cell;
+    width: 100%;
+    border: 0.5px solid var(--ink);  /* 본문색과 통일 */
+    padding: 12px;
+    background: transparent;
+  }
 
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 40px;  /* 하단 여백 */
+  /* 헤더 첫 칸은 약한 배경 */
+  /*thead th:first-child { background-color: #f5f5f5; }*/
 }
 
