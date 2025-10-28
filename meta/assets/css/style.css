@@ -68,7 +68,6 @@ a:hover {
 .grid-3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: calc(33vw);
   gap: 20px;
 }
 .grid-6 {
@@ -294,26 +293,69 @@ font-family: "Arial Narrow";
 src: url("fonts/Arial Narrow.ttf");
 }
 
-/* BUTTON */
-#copy-btn {
-  padding: 15px;
-  cursor: pointer;
-  margin: 1em auto;
-  display: block;
-  background: none;
-  border: 1px solid black;
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 1em;
+#copy-btn{
+  padding:15px; border:1px solid #000; border-radius:10px;
+  background:none; display:inline-block; font:inherit; text-align:center;
+  cursor:pointer; margin:1em 0;
 }
-#copy-btn:hover{
-  background-color: lightgoldenrodyellow;
-  cursor:pointer;
+#copy-btn:hover{ background-color:lightgoldenrodyellow; }
+
+
+/* days 섹션: 2열 중앙 정렬(대칭) */
+.grid-6.days {
+  grid-template-columns: repeat(2, minmax(260px, 1fr)); /* 두 칸 동일 너비 */
+  gap: 20px;                             /* 좌우 간격 */
+  max-width: 900px;                      /* 전체 묶음을 중앙에 */
+  margin-inline: auto;                   /* 가운데 정렬 */
 }
 
-#copy-btn {
-  display: inline-block; /* 버튼처럼 박스로 만들어줌 */
-  text-align: center; /* 텍스트 중앙정렬 */
-  position: center;
-
+/* GTBT hover 효과 */
+.iframe-box {
+  position: relative;
+  overflow: hidden;
+  height: 300px; /* 원하는 높이로 조정 가능 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
+/* 기본 상태: 문구만 중앙 */
+.iframe-box p {
+  position: absolute;
+  z-index: 2;
+  font-size: 18px;
+  color: plum;
+  transition: opacity 0.4s ease;
+}
+
+/* iframe과 링크 기본 숨김 */
+.iframe-box iframe,
+.iframe-box a {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+/* hover 시: 문구 사라지고 iframe 표시 */
+.iframe-box:hover p {
+  opacity: 0;
+}
+
+.iframe-box:hover iframe {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* grid-3 내부 모든 박스 높이 통일 */
+.grid-3 > .block,
+.grid-3 > figure.block-image {
+  height: 300px;
+  overflow: hidden; /* 내용이 넘치면 스크롤 안 생기게 */
+}
+
+
