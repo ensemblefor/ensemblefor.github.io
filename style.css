@@ -1,11 +1,88 @@
-		*{
- margin : 0;
- padding: 0;
- box-sizing: border-box;
+:root{
+  --pad-x: 28px;
+  --pad-y: 22px;
+  --text: #111;
 }
 
-body {
-    margin: 20px;
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  color:var(--text);
+  font-family: sans-serif;
+}
+
+/* 헤더 */
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: transparent;
+  pointer-events: none;
+}
+
+.site-header__inner{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding: var(--pad-y) var(--pad-x);
+  pointer-events: auto;
+}
+
+/* 좌측 브랜드 */
+.site-header__brand{
+  text-decoration:none;
+  color:var(--text);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+/* 우측 네비 */
+.site-header__nav{
+  display:flex;
+  gap: 28px;
+  align-items:flex-start;
+  white-space: nowrap;
+}
+
+.nav-link{
+  position: relative;
+  text-decoration:none;
+  color:var(--text);
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  padding-left: 18px;
+}
+
+.nav-link::before{
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+.nav-link:hover{
+  opacity: 0.65;
+}
+
+.page{
+  padding-top: calc(var(--pad-y) * 2 + 18px); /* 대충 62~72px 범위 */
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+.subtitle{
+  margin: 0;
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.05em;  /* n o w 느낌 */
+  line-height: 1.2;
+  white-space: nowrap;     /* 스샷처럼 한 줄 유지 */
+}
+
+.subtitle b{
+  font-weight: 700;
 }
 
 
