@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <title>you are welcome</title>
-  <meta name="description" content="설명" />
-  <meta name="keywords" content="키워드1, 키워드2" />
-  <meta property="og:image" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="" />
+  <meta name="description" content="the online home for myself. i document what happens in the offline world.">
+
+  <meta property="og:title" content="bailey kim">
+  <meta property="og:description" content="the online home for myself. i document what happens in the offline world.">
+  <meta property="og:url" content="https://ensemblefor.github.io/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@latest/dist/fonts/geist-mono/style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__brand" href="https://ensemblefor.github.io/">you're welcome</a>
+      <a class="site-header__brand" href="https://ensemblefor.github.io/">
+        <span class="site-header__mark">☘︎</span>
+        <span class="site-header__title">you’re welcome</span>
+      </a>
 
       <nav class="site-header__nav" aria-label="Primary">
         <a class="nav-link" href="https://www.instagram.com/myuaud" target="_blank" rel="noopener">
@@ -27,13 +33,12 @@
     </div>
   </header>
 
-  <main class="page">
-    <marquee><p class="subtitle">
-      n o w . b u i l d i n g . a n . <b>o n l i n e</b> . s p a c e . d o c u m e n t i n g .
-      w h a t . h a p p e n s . i n . t h e . <b>o f f l i n e</b> . w o r l d
-    </p></marquee>
 
-  <div class="select-wrap">
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="select-wrap">
           <label class="sr-only" for="homeSelect">Navigate</label>
           <select id="homeSelect" class="select"
             onchange="if(this.value) window.location.href=this.value;">
@@ -42,7 +47,10 @@
             <option value="info.html">info</option>
           </select>
         </div>
+      </div>
+    </section>
   </main>
-  
+
+  <footer class="floating-footer">Last updated April 8th, 2026</footer>
 </body>
 </html>
