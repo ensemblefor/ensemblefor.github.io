@@ -2,6 +2,7 @@
   --pad-x: 28px;
   --pad-y: 22px;
   --text: #111;
+  --font-base: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
 *{ box-sizing:border-box; }
@@ -9,10 +10,10 @@
 body{
   margin:0;
   color:var(--text);
-  font-family: sans-serif;
+  font-family: var(--font-base); /* ✅ 전체 폰트 통일 */
 }
 
-/* 헤더 */
+
 .site-header{
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -65,25 +66,76 @@ body{
   opacity: 0.65;
 }
 
+
 .page{
-  padding-top: calc(var(--pad-y) * 2 + 18px); /* 대충 62~72px 범위 */
+  padding-top: calc(var(--pad-y) * 2 + 18px);
   padding-left: var(--pad-x);
   padding-right: var(--pad-x);
+
+  min-height: 100vh;
+
+  display: flex;            
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .subtitle{
   margin: 0;
   margin-top: 8px;
   font-size: 14px;
-  letter-spacing: 0.05em;  /* n o w 느낌 */
+  letter-spacing: 0.05em;
   line-height: 1.2;
-  white-space: nowrap;     /* 스샷처럼 한 줄 유지 */
+  white-space: nowrap;
 }
 
 .subtitle b{
   font-weight: 700;
 }
 
+
+.select-wrap{
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.select{
+  width: 100%;
+  max-width: 260px;
+  height: 44px;
+  padding: 0 12px;
+
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 320;
+  letter-spacing: 0.02em;
+
+  color: var(--text);
+  background: rgba(255,255,255,0.55); /* ✅ 요청대로 유지 */
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+
+  outline: none;
+  appearance: none;
+}
+
+.select:focus{
+  border-color: rgba(0,0,0,0.10);
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
 
 @media screen and (max-width: 704px) {
 
