@@ -32,6 +32,17 @@
       n o w . b u i l d i n g . a n . <b>o n l i n e</b> . s p a c e . d o c u m e n t i n g .
       w h a t . h a p p e n s . i n . t h e . <b>o f f l i n e</b> . w o r l d
     </p></marquee>
+
+  <div class="select-wrap">
+          <label class="sr-only" for="homeSelect">Navigate</label>
+          <select id="homeSelect" class="select"
+            onchange="if(this.value) window.location.href=this.value;">
+            <option value="" selected disabled>select</option>
+            <option value="recent.html">recent works</option>
+            <option value="info.html">info</option>
+          </select>
+        </div>
   </main>
+  
 </body>
 </html>
